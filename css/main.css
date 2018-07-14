@@ -1,0 +1,31 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    display: flex; 
+    flex-direction: row; /* To align horizontally */
+}
+.frame{
+    background-color: red;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+}
+.scoreframe{
+    background-color: blue;
+    width: 100%;
+    height: 20%;
+    flex-direction: row;
+}
+.gamecontrols{
+    width: 100%;
+    height: 80%;
+    background-color: aqua;
+}
+.scorenumber{
+    background-color: green;
+    margin: 0 1%;
+    width: 30%;
+    height: 100%;
+    display: inline-block;
+}
