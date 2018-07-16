@@ -1,6 +1,6 @@
 function clickImage(elementID){
     let currentDOM = document.getElementById(elementID);
-    currentDOM.style.outline = "2px solid black";
+    currentDOM.classList.add("outlineForImg");
     haltClicking(1000,currentDOM);
 }
 function updateScore(type){
@@ -32,7 +32,9 @@ function haltClicking(time,currentDOM){
             rock.classList.remove('notClickable');
             paper.classList.remove('notClickable');
             scissors.classList.remove('notClickable');
-            currentDOM.style.outline = null; //A little spaghetti, but it is better this way.
+
+            currentDOM.classList.remove("outlineForImg"); 
+            //A little spaghetti, but it is better than adding another callback function here.
         }, time);
     }  
 }
