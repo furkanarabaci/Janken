@@ -1,4 +1,5 @@
 let Game = {
+    //This should be singleton, that's why this is object literal.
     //Rock = 0 | Paper = 1 | Scissors = 2
     firstScore : 0,
     tieScore : 0, //Only AddScore() will update them. 

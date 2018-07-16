@@ -1,7 +1,13 @@
+var firstPlayer = new Player("first");
+var secondPlayer = new Ai("second"); //TODO: Make these two classes inherit same parent.
+
 function clickImage(elementID){
     let currentDOM = document.getElementById(elementID);
     currentDOM.classList.add("outlineForImg");
-    haltClicking(1000,currentDOM);
+    firstPlayer.MakeMove(elementID); //Give string as parameter.
+    secondPlayer.MakeMove(); //Second player is AI in this case.
+    decideResult();
+    haltClicking(200,currentDOM); //While deciding, prevent users spamming stuff.
 }
 
 function haltClicking(time,currentDOM){
@@ -15,16 +21,16 @@ function haltClicking(time,currentDOM){
     }  
 }
 function MakeUnClickable(){
-    document.getElementById("playerRock").classList.add('notClickable');
-    document.getElementById("playerPaper").classList.add('notClickable');
-    document.getElementById("playerScissors").classList.add('notClickable');
+    document.getElementById("firstRock").classList.add('notClickable');
+    document.getElementById("firstPaper").classList.add('notClickable');
+    document.getElementById("firstScissors").classList.add('notClickable');
 }
 function MakeClickable(){
-    document.getElementById("playerRock").classList.remove('notClickable');
-    document.getElementById("playerPaper").classList.remove('notClickable');
-    document.getElementById("playerScissors").classList.remove('notClickable');
+    document.getElementById("firstRock").classList.remove('notClickable');
+    document.getElementById("firstPaper").classList.remove('notClickable');
+    document.getElementById("firstScissors").classList.remove('notClickable');
 }
-function updateScores(){
+function UpdateScores(){
     //It is worse to update everything, but i want to avoid weird changes.
     document.getElementById("firstScore").innerHTML = Game.firstScore;
     document.getElementById("tieScore").innerHTML = Game.tieScore;
@@ -32,5 +38,14 @@ function updateScores(){
 }
 function ResetScores(){
     Game.ResetScores();
-    updateScores();
+    UpdateScores();
+}
+function decideResult(){
+    //This is DOM level of calling game logic.
+    //Rock = 0 | Paper = 1 | Scissors = 2
+    let result = Game.Result(firstPlayer.currentChoice,secondPlayer.currentChoice);
+    console.log("First :" + firstPlayer.currentChoice);
+    console.log("Second :" + secondPlayer.currentChoice);
+    Game.AddScore(result);
+    UpdateScores();
 }
