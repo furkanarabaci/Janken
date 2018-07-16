@@ -48,4 +48,20 @@ function decideResult(){
     console.log("Second :" + secondPlayer.currentChoice);
     Game.AddScore(result);
     UpdateScores();
+    UpdateText(result);
+}
+function UpdateText(result){
+    //TODO: Maybe also show who picked who at the last round.
+    //result => -1 = first wins | 0 = tie | 1 = second player wins
+    let newText = "Couldn't determine score."; //Default value.
+    if(result === -1){
+        newText = "First player wins !";
+    }
+    else if(result === 0){
+        newText = "It's a tie !";
+    }
+    else if(result === 1){
+        newText = "Second player wins !";
+    }
+    document.getElementById("infoText").innerHTML = newText;
 }
