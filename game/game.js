@@ -1,11 +1,9 @@
-class Game{
+let Game = {
     //Rock = 0 | Paper = 1 | Scissors = 2
-    constructor(){
-        this.firstScore = 0;
-        this.tieScore = 0; //Only AddScore() will update them. 
-        this.secondScore = 0;
-    }
-    Result(first,second){
+    firstScore : 0,
+    tieScore : 0, //Only AddScore() will update them. 
+    secondScore : 0,
+    Result : function(first,second){
         //-1 = first wins | 0 = tie | 1 = second player wins
         if(first < 0 || second < 0 || first > 2 || second > 3){
             return -2;  // invalid parameters. Warn user accordingly.
@@ -34,19 +32,19 @@ class Game{
         else{
             return -1;
         }
-    }
-    AddScore(result){ //Will only be called at DOM level.
+    },
+    AddScore : function(result){ //Will only be called at DOM level.
         if(result < -1 || result > 1){
             return -1; //Invalid parameters
         }
         if(result === -1){
-            this.firstScore++;
+            Game.firstScore++;
         }
         else if(result === 1){
-            this.secondScore++;
+            Game.secondScore++;
         }
         else{
-            this.tieScore++;
+            Game.tieScore++;
         }
     }
 }

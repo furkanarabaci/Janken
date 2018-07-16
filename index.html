@@ -5,27 +5,32 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Janken</title>
         <link rel="stylesheet" href="css/main.css">
+        <script src="index.js"></script>
+        <script src="game/ai.js"></script>
+        <script src="game/game.js"></script>
+        <script src="game/player.js"></script>
+        <!-- Scripts are not called async because these are in local and they are all critical.-->
     </head>
     <body>
         <div class="container">
             <div class="frame">
-                <img src="stripes/rock.png" alt="rock"></img>
-                <img src="stripes/paper.png" alt="paper"></img>
-                <img src="stripes/scissors.png" alt="scissors"></img>
+                <img id="playerRock" onClick="clickImage('playerRock')" src="stripes/rock.png" alt="rock"></img>
+                <img id="playerPaper" onClick="clickImage('playerPaper')" src="stripes/paper.png" alt="paper"></img>
+                <img id="playerScissors" onClick="clickImage('playerScissors')" src="stripes/scissors.png" alt="scissors"></img>
             </div>
             <div class="frame">
                 <div class="scoreframe">
                     <div class="scorenumber">
                         <p>YOU</p>
-                        <P>0</P>
+                        <P id="yourScore">0</P>
                     </div>
                     <div class="scorenumber">
                         <P>TIE</P>
-                        <P>0</P>
+                        <P id="tieScore">0</P>
                     </div>
                     <div class="scorenumber">
                         <P>AI</P>
-                        <P>0</P>
+                        <P id="botScore">0</P>
                     </div>
                 </div>
                 <div class="gamecontrols">
@@ -35,9 +40,9 @@
                 </div>
             </div>
             <div class="frame flip-horizontal">
-                <img src="stripes/rock.png" alt="rock"></img>
-                <img src="stripes/paper.png" alt="paper"></img>
-                <img src="stripes/scissors.png" alt="scissors"></img>
+                <img id="botRock" src="stripes/rock.png" alt="rock"></img>
+                <img id="botPaper" src="stripes/paper.png" alt="paper"></img>
+                <img id="botScissors" src="stripes/scissors.png" alt="scissors"></img>
             </div>
     </div>
     </body>
