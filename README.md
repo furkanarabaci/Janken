@@ -41,7 +41,7 @@ Structure :
 
 Notes:
 - Game can currently support AI vs AI.
-- Player vs Player can be done with using same page, not via internet.
+- Player vs Player can currently be done with using same page, not via internet.
 - It is indeed can be done in a couple hours, but i took my time to improve things a little.
 - It doesn't currently show who picked who at the last round, only shows who won.
 - I didn't use any unit test, but i tested app in two different browsers. ( chromium and konqueror )
@@ -50,4 +50,4 @@ Future features :
 - [ ] Better AI with prediction algorithms
 - [ ] Player vs Player support via Socket.io or direct link
 - [ ] Animated designs
-- [ ] 
+- [ ] Add support for IE6 ( not tested in IE6, but i am positive that it won't work properly. )
