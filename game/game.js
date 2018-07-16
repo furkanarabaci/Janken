@@ -46,5 +46,10 @@ let Game = {
         else{
             Game.tieScore++;
         }
+    },
+    ResetScores : function(){
+        this.firstScore = 0;
+        this.tieScore = 0;
+        this.secondScore = 0;
     }
 }

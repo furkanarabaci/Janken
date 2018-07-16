@@ -22,7 +22,7 @@
                 <div class="scoreframe">
                     <div class="scorenumber">
                         <p>YOU</p>
-                        <P id="yourScore">0</P>
+                        <P id="firstScore">0</P>
                     </div>
                     <div class="scorenumber">
                         <P>TIE</P>
@@ -30,12 +30,15 @@
                     </div>
                     <div class="scorenumber">
                         <P>AI</P>
-                        <P id="botScore">0</P>
+                        <P id="secondScore">0</P>
                     </div>
                 </div>
                 <div class="gamecontrols">
-                    <button>START</button>
-                    <button>RESET</button>
+                    <!-- <button>START</button> 
+                    This button is commented out because it is obsolete for now.
+                    It will be needed when there is two players.
+                    -->
+                    <button onclick="ResetScores()">RESET</button>
                     <h1>WHATEVER INFGO</h1>
                 </div>
             </div>
