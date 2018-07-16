@@ -1,10 +1,10 @@
 class Game{
+    //Rock = 0 | Paper = 1 | Scissors = 2
     constructor(){
         this.firstScore = 0;
-        this.tieScore = 0; //Update these on DOM level for better scalability.
+        this.tieScore = 0; //Only AddScore() will update them. 
         this.secondScore = 0;
     }
-    //Rock = 0 | Paper = 1 | Scissors = 2
     Result(first,second){
         //-1 = first wins | 0 = tie | 1 = second player wins
         if(first < 0 || second < 0 || first > 2 || second > 3){
@@ -35,7 +35,7 @@ class Game{
             return -1;
         }
     }
-    AddScore(result){
+    AddScore(result){ //Will only be called at DOM level.
         if(result < -1 || result > 1){
             return -1; //Invalid parameters
         }
