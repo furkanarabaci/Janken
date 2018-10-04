@@ -1,5 +1,7 @@
 Janken refers to rock-paper-scissors in Japanese.
 
+Link : https://illegaldisease.github.io/Janken/
+
 For best support, please use modern web browsers.
 
 Used libraries :
